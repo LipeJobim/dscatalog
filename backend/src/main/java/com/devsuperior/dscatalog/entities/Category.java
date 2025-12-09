@@ -1,21 +1,23 @@
 package com.devsuperior.dscatalog.entities;
 
-import ch.qos.logback.core.joran.event.SaxEventRecorder;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
+@Entity
+@Table (name = "tb_category")
+public class Category implements Serializable {
 
-public class category implements Serializable {
-
-
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
         private String name;
 
-        public category (){
+        public Category(){
 
         }
 
-    public category(Long id, String name) {
+    public Category(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -39,7 +41,7 @@ public class category implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        category category = (category) o;
+        Category category = (Category) o;
         return Objects.equals(id, category.id);
     }
 

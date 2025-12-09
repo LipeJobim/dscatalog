@@ -1,8 +1,9 @@
 package com.devsuperior.dscatalog.repositories;
 
-import jdk.jfr.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.devsuperior.dscatalog.entities.category;
+import com.devsuperior.dscatalog.entities.Category;
+import org.springframework.stereotype.Repository;
 
-public interface Categoryrepository extends JpaRepository <category, Long > {
+@Repository
+public interface CategoryRepository extends JpaRepository <Category, Long > {
 }
